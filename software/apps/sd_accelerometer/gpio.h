@@ -6,7 +6,7 @@
 typedef enum {
 	INPUT =0, 
 	OUTPUT
-};
+}gpio_direction_t;
 // Inputs: 
 //  gpio_num - gpio number 0-31
 //  dir - INPUT =0, OUTPUT =1

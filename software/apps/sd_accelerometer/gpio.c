@@ -3,7 +3,7 @@
 // Inputs: 
 //  gpio_num - gpio number 0-31
 //  dir - gpio direction (INPUT, OUTPUT)
-void gpio_config(uint8_t gpio_num, gpio_direction_t dir) {
+void gpio_config(uint8_t gpio_num, bool dir) {
 
 }
 

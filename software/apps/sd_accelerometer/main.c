@@ -103,11 +103,12 @@ int main (void) {
    //-------------------------------------------------------------//	  
    //---------- DONT MODIFY THE CODE BELOW THIS LINE -------------//
 // display results
+    float ax, ay, az;
      
     printf("a_x: %f\ta_y: %f\ta_z:%f\n", ax, ay, az);
    
     // code for logging data from the accelerometer    
-      if (!gpio_read(BUCKLER_BUTTON0)) {
+      // if (!gpio_read(BUCKLER_BUTTON0)) {
          
         timestamp = get_timestamp();      
         simple_logger_log("%f,%f,%f,%f\n", timestamp, ax, ay, az);
@@ -115,11 +116,11 @@ int main (void) {
         printf("%f - Wrote line to SD card\n", timestamp);
         // Signal that lines were written
         
-        gpio_clear(BUCKLER_LED0);      
+        // gpio_clear(BUCKLER_LED0);      
         nrf_delay_ms(100);
-      }
-      else
-        gpio_set(BUCKLER_LED0);  
+      // }
+      // else
+        // gpio_set(BUCKLER_LED0);  
   }   
 }
 
