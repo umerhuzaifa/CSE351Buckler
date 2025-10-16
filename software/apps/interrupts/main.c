@@ -16,11 +16,9 @@ void GPIOTE_IRQHandler(void) {
 }
 
 int main(void) {
-    // Initialize LED and BUTTON pins on the Buckler board
-    nrf_gpio_cfg_output(BUCKLER_LED0);
-    nrf_gpio_cfg_output(BUCKLER_LED1);
-    nrf_gpio_cfg_input(BUCKLER_BUTTON0, NRF_GPIO_PIN_PULLUP);
-    nrf_gpio_cfg_input(BUCKLER_SWITCH0, NRF_GPIO_PIN_PULLUP);
+  // Initialize LED and BUTTON pins on the Buckler board
+  
+
     
   // initialize RTT library
   error_code = NRF_LOG_INIT(NULL);
@@ -28,11 +26,10 @@ int main(void) {
   NRF_LOG_DEFAULT_BACKENDS_INIT();
   printf("Log initialized!\n");
  
-    // Step A: Configuration 
-  // 1. configure
+  // Step A: Configuration 
+  // 1. configure the interrupt
   // 2. enable interrupt
   // 3. enable IRQ on NVIC 
-
 
 
     while (1) {
