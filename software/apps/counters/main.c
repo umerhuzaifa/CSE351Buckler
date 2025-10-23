@@ -26,24 +26,12 @@
 
 #define count_threshold 10000000
 
-// Interrupt Service Routine (ISR) for when Timer 4 reaches the desired value i.e. corresponding to 3 seconds time
-
-void TIMER4_IRQHandler()
-{
-
-   // i.e. clear the compare event
-
-   // Increment COUNTER on TIMER3   
-
-}
 
 void timer_init(){
   // all the register settings for setting up TIMER4 for 3 seconds timing operation
   
   // Additional settings for declaring TIMER4 as an interrupt
   
-  // NVIC_EnableIRQ(TIMER4_IRQn)
-  // NVIS_SetPriority(TIMER4_IRQn, <0..255> number)
 
 }
 
@@ -84,6 +72,8 @@ int main(void) {
 
     printf("Counter (timer 3) readings are: %d \n", read_counter());
 
+    // Place a check when counter needs to be incremented.
+    // 
     nrf_delay_ms(1000);
   }
 }
