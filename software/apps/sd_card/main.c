@@ -1,4 +1,4 @@
-// SD card app
+// SD card app solution 
 //
 // Writes sample lines to the SD card on Buckler
 
@@ -46,24 +46,21 @@ int main(void) {
   nrf_gpio_pin_set(BUCKLER_SD_CS);
 
   // Initialize SD card
-  const char filename[] = "testfile.log";
-  const char permissions[] = "w"; // w = write, a = append
+  const char filename[] = "testfile.csv";
+  const char permissions[] = "a"; // w = write, a = append
 
   // Start file
-  error_code  = simple_logger_init(filename, permissions);
-  APP_ERROR_CHECK(error_code);
+  simple_logger_init(filename, permissions);
 
   // If no header, add it
-  error_code  = simple_logger_log_header("HEADER for file \'%s\', written on %s \n", filename, "DATE");
-  APP_ERROR_CHECK(error_code);
+  simple_logger_log_header("HEADER for file \'%s\', written on %s \n", filename, "DATE");
   printf("Wrote header to SD card\n");
 
   // Write sample lines
   int nr_lines = 5;
 
   for (int i = 0; i < nr_lines; i++) {
-    error_code  = simple_logger_log("%s: Line %i - Additional line added\n", "TIMESTAMP", i+1);
-    APP_ERROR_CHECK(error_code);
+    simple_logger_log("%s: Line %i - Additional line added\n", "TIMESTAMP", i+1);
     printf("Wrote line to SD card\n");
   }
 

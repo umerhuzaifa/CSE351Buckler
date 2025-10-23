@@ -7,20 +7,19 @@
 #include "buckler.h"
 
 void SWI1_EGU1_IRQHandler(void) {
-   
+   NRF_EGU1->EVENTS_TRIGGERED[0]=0;
+   // rest of the code follows here
 }
 
 // Step B: Write an IRQ Handler/ISR for the Interrupt
 void GPIOTE_IRQHandler(void) {
+   // Clear the Events register
    
 }
 
 int main(void) {
-    // Initialize LED and BUTTON pins on the Buckler board
-    nrf_gpio_cfg_output(BUCKLER_LED0);
-    nrf_gpio_cfg_output(BUCKLER_LED1);
-    nrf_gpio_cfg_input(BUCKLER_BUTTON0, NRF_GPIO_PIN_PULLUP);
-    nrf_gpio_cfg_input(BUCKLER_SWITCH0, NRF_GPIO_PIN_PULLUP);
+  
+
     
   // initialize RTT library
   error_code = NRF_LOG_INIT(NULL);
@@ -28,11 +27,18 @@ int main(void) {
   NRF_LOG_DEFAULT_BACKENDS_INIT();
   printf("Log initialized!\n");
  
-    // Step A: Configuration 
-  // 1. configure
-  // 2. enable interrupt
-  // 3. enable IRQ on NVIC 
+  // Initialize LED and BUTTON pins on the Buckler board
+  //............
 
+
+  // Steps for Setting up Interrupt
+  // 1. configure the interrupt
+
+
+  // 2. enable interrupt -- NRF_GPIOTE->...
+
+
+  // 3. enable IRQ on NVIC  -- NVIC_EnableIRQ(...)
 
 
     while (1) {
