@@ -99,9 +99,7 @@ int main (void) {
 
    // calculation of acceleration from voltage output
     
-   
-   //-------------------------------------------------------------//	  
-   //---------- DONT MODIFY THE CODE BELOW THIS LINE -------------//
+  
 // display results
     float ax, ay, az;
      
