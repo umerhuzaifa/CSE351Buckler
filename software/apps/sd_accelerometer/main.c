@@ -117,7 +117,7 @@ int main (void) {
         // Signal that lines were written
         
         // gpio_clear(BUCKLER_LED0);      
-        nrf_delay_ms(100);
+        nrf_delay_ms(10);
       // }
       // else
         // gpio_set(BUCKLER_LED0);  
